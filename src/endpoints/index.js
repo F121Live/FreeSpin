@@ -1,4 +1,5 @@
 const express = require('express');
+const loginHandler = require('../handlers/login_handler');
 const router = express.Router();
 var config = require('../config');
 
@@ -14,7 +15,7 @@ else
 {
     router.get('/', async (req, res) => {
         console.debug('Connection received')
-        res.send('SONIC RUNNERS OK');
+        res.send('SONICRUNNERS OK');
     });
 }
 
@@ -27,11 +28,11 @@ router.get('/generate204/', async (req, res) => {
 if (!config.IS_MAINTENANCE)
 {
     // Login
-    router.get('/Login/login/', async (req, res) => { });
-    router.get('/Sgn/sendApollo/', async (req, res) => { });
-    router.get('/Login/getVariousParameter/', async (req, res) => { });
-    router.get('/Player/getPlayerState/', async (req, res) => { });
-    router.get('/Player/getCharacterState/', async (req, res) => { });
+    router.get('/Login/login/', async (req, res) => { console.debug(req + "  " + res); res.status(200); });
+    router.get('/Sgn/sendApollo/', async (req, res) => { console.debug(req + "  " + res); });
+    router.get('/Login/getVariousParameter/', async (req, res) => { console.debug(req + "  " + res); });
+    router.get('/Player/getPlayerState/', async (req, res) => { console.debug(req + "  " + res); });
+    router.get('/Player/getCharacterState/', async (req, res) => { console.debug(req + "  " + res); });
     router.get('/Player/getChaoState/', async (req, res) => { });
     router.get('/Spin/getWheelOptions/', async (req, res) => { });
     router.get('/Game/getDailyChalData/', async (req, res) => { });
