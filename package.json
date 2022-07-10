@@ -1,0 +1,25 @@
+{
+  "name": "freespin",
+  "version": "1.0.0",
+  "description": "A NodeJS Sonic Runners server",
+  "main": "start",
+  "scripts": {
+    "server": "node src/start.js"
+  },
+  "author": "F121",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "express-mysql-session": "^2.1.8",
+    "express-session": "^1.17.3",
+    "express-validator": "^6.14.2",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "timeago.js": "^4.0.2"
+  }
+}
