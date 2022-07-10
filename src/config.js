@@ -10,6 +10,7 @@ config.DB_PORT = 3306; // Default port
 config.INFO_FILE = './info_config.json'; // Default info file
 config.EVENT_FILE = './event_config.json'; // Default event file
 config.CAMPAIGN_FILE = './campaign_config.json'; // Default campaign file
+config.MAINTENANCE_MSGS = './maintenance_message.json'; // Default maintenance message file
 config.DEBUG_LOG = true; // Default, log activity to console
 // Game
 config.AVAILABLE_CHARACTERS = './character_config.json'  // Default characters, used for account creation and update

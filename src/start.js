@@ -16,6 +16,9 @@ app.use(require('./endpoints/index'));
 // Listener
 app.listen(app.get('port'), () => {
     console.log('Server is in port', app.get('port'));
+    if (process.argv = "maintenance") {
+        console.log('NOTICE: Server is running in maintenance mode!!!!');
+    }
     console.log('Reading config file...');
     console.log(config);
   });
