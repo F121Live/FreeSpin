@@ -18,9 +18,9 @@ config.AVAILABLE_CHAO = './chao_config.json' // Default chao, used for account c
 config.USE_ENERGY = true; // Default, use the lives system
 config.MAX_ENERGY = 10; // Default, max lives
 config.ENERGY_REFILL_TIME = 5000; // Default, energy refill time, miliseconds
-config
 config.SUPPORT_LEGACY_VERSIONS = false; // Default, support legacy versions of Sonic Runners
 config.CURRENT_VERSION = '2.2.0' // Current client version, if the client is older than this, the connection will be rejected
+
 // Maintenance
 config.IS_MAINTENANCE = ((process.argv.indexOf('+maintenance') !== -1) ? true : false); // Default, server is not in maintenance mode
 
