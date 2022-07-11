@@ -3,9 +3,9 @@ var config = {};
 // Server
 config.PORT = 9001; // Default port
 config.DB_HOST = 'localhost'; // Default host
-config.DB_NAME = 'outrun'; // Default database name
+config.DB_NAME = 'freespin'; // Default database name
 config.DB_USER = 'root'; // Default user
-config.DB_PASSWORD = '09052020'; // Default password
+config.DB_PASSWORD = 'CHANGE_ME'; // Default password
 config.DB_PORT = 3306; // Default port
 config.INFO_FILE = './info_config.json'; // Default info file
 config.EVENT_FILE = './event_config.json'; // Default event file
