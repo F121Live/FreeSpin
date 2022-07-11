@@ -21,8 +21,8 @@ config.ENERGY_REFILL_TIME = 5000; // Default, energy refill time, miliseconds
 config.SUPPORT_LEGACY_VERSIONS = false; // Default, support legacy versions of Sonic Runners
 config.CURRENT_VERSION = '2.2.0' // Current client version, if the client is older than this, the connection will be rejected
 // Asset Server Configuration
-config.ASSET_SERVER_VERSION = 052; // Default, asset server version
-config.INFORMATION_SERVER_VERSION = 017; // Default, information server version
+config.ASSET_SERVER_VERSION = '052'; // Default, asset server version
+config.INFORMATION_SERVER_VERSION = '017'; // Default, information server version
 
 // Maintenance
 config.IS_MAINTENANCE = ((process.argv.indexOf('+maintenance') !== -1) ? true : false); // Default, server is not in maintenance mode
