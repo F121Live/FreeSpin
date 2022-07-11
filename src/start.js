@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 // Iinitialize
 const app = express();
 var config = require('./config');
+var database = require('./database/start_database');
+database.StartDatabase(config);
 
 // Settings
 app.set('port', config.PORT || 9001);

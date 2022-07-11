@@ -5,12 +5,11 @@ const decrypt = require('../helpers/parser');
 const key = "Ec7bLaTdSuXuf5pW";
 const iv = "DV3G4Kb7xflNqi5x";
 
-async function Login (first, second) {
-    console.debug(first + "  " + second);
+async function Login (key, iv, param) {
     console.debug("LOGIN FUNCTION");
-    decrypt.decrypt(key, iv, first.body);
+    var request = decrypt.Decrypt(key, iv, param);
     //decrypt.decrypt(first);
-    second.send("LOGIN OK");
+    console.log("LOGIN OK " + request);
 }
 
 module.exports = {
