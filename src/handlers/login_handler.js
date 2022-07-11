@@ -2,9 +2,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const decrypt = require('../helpers/parser');
 
-async function Login (req, res) {
-    console.debug(req + "  " + res);
+async function Login (first, second) {
+    console.debug(first + "  " + second);
     console.debug("LOGIN FUNCTION");
-    decrypt.decrypt(req);
-    res.send("LOGIN OK");
+    //decrypt.decrypt(first);
+    second.send("LOGIN OK");
+}
+
+module.exports = {
+    Login
 }

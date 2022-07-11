@@ -17,8 +17,8 @@ if (config.MAINTENANCE) {
 app.use(require('./endpoints/index'));
 
 // Listener
-app.listen(app.get('port'), () => {
-    console.log('Server is in port', app.get('port'));
+app.listen(app.get('port',), '0.0.0.0', () => {
+    console.log('Server is starting in localhost at port', app.get('port'));
     console.log('Reading config file...');
     console.log(config);
   });
