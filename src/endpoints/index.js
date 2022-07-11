@@ -28,7 +28,7 @@ router.get('/generate204/', async (req, res) => {
 if (!config.IS_MAINTENANCE)
 {
     // Login
-    router.post('/Login/login', async (req, res) => { console.debug(req.params + "  " + res); res.status(200); loginHandler.Login(req, res); });
+    router.post('/Login/login/', async (req, res) => { console.debug(req.params + "  " + res); res.status(200); loginHandler.Login(req, res); });
     router.post('/Sgn/sendApollo/', async (req, res) => { console.debug(req + "  " + res); });
     router.post('/Login/getVariousParameter/', async (req, res) => { console.debug(req + "  " + res); });
     router.post('/Player/getPlayerState/', async (req, res) => { console.debug(req + "  " + res); });
