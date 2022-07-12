@@ -4,11 +4,10 @@ const bodyParser = require('body-parser');
 const router = express();
 var config = require('../config');
 var helpers = require('../helpers/parser');
-var qs = require('querystring');
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended: true}));
-var iv = "DV3G4Kb7xflNqi5x";
+var iv = "Ec7bLaTdSuXuf5pW";
 
 // Listen to the root path, respond with a welcome message
 if (config.IS_MAINTENANCE)
@@ -31,14 +30,18 @@ router.get('/generate204/', async (req, res) => {
     res.status(204).send();
     console.debug('Status 204')
 });
+router.get('/panel/', async (req, res) => {
+    res.status(200).send("CONTROL PANEL PAGE SOON");
+    console.debug('Status 204')
+});
 
 if (!config.IS_MAINTENANCE)
 {
     // Login
     router.post('/Login/login/', async (req, res) => {
         var json = helpers.ParseJson(req.body);
-        console.log(JSON.stringify(req.body) + "  " + json.key);
-        loginHandler.Login(JSON.stringify(json.key), iv, json.param);
+        console.log(JSON.stringify(req.body) + "  " + json.key + " " + json.secure);
+        loginHandler.Login(json.key, iv, json.param, json.secure);
         res.status(200); 
     });
     router.post('/Sgn/sendApollo/', async (req, res) => { console.debug(req + "  " + res); });

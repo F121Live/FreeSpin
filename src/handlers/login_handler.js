@@ -1,15 +1,17 @@
-const express = require('express');
-const bodyParser = require('body-parser');
 const decrypt = require('../helpers/parser');
 
-const key = "Ec7bLaTdSuXuf5pW";
-const iv = "DV3G4Kb7xflNqi5x";
-
-async function Login (key, iv, param) {
-    console.debug("LOGIN FUNCTION");
-    var request = decrypt.Decrypt(key, iv, param);
-    //decrypt.decrypt(first);
-    console.log("LOGIN OK " + request);
+async function Login (key, iv, param, secure) {
+    var json = JSON.parse(decrypt.Decrypt(key, iv, param.toString(), secure));
+    uid = json.lineAuth.userId;
+    password = json.lineAuth.password;
+    version = json.version;
+    if (uid !== 0) {
+        console.log("[ENTERING LOGIN FOR PLAYER " + uid + "]");
+        return true;
+        //TODO: everything.
+    } else {
+        // CREATE PLAYER
+    }
 }
 
 module.exports = {

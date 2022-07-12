@@ -1,0 +1,7 @@
+function NewResponse(){
+
+}
+
+function NewBaseResponse(){
+    
+}
