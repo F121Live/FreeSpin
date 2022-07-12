@@ -1,0 +1,24 @@
+body {
+    background-color: #e2e2e2;
+    font-family: roboto;
+    text-align: center;
+    margin: auto;
+}
+.login-text {
+    font-size: 10px;
+    font-weight: roboto;
+    color: #000;
+}
+.login, .container {
+    width: 300px;
+    margin:0 auto;
+}
+.login input [type="user"], 
+.login input [type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}

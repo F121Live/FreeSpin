@@ -5,6 +5,10 @@ const router = express();
 var config = require('../config');
 var helpers = require('../helpers/parser');
 
+router.set('view engine','ejs');
+router.set('views', './src/control_page');
+router.use('/css', express.static('./src/control_page/css'));
+router.use('/res', express.static('./src/control_page/res'));
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended: true}));
 var iv = "Ec7bLaTdSuXuf5pW";
@@ -31,7 +35,7 @@ router.get('/generate204/', async (req, res) => {
     console.debug('Status 204')
 });
 router.get('/panel/', async (req, res) => {
-    res.status(200).send("CONTROL PANEL PAGE SOON");
+    res.render('control');
     console.debug('Status 204')
 });
 
