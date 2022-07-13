@@ -6,6 +6,9 @@ function GameLog (text, type){
         case "error":
             console.log("!!!!!![ERROR: " + text + "]!!!!!!");
             break;
+        case "server":
+            console.log("[SERVER: " + text + "]");
+            break;
         default:
             console.log("[GAME: " + text + "]");
             break;

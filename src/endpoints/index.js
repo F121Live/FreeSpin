@@ -1,5 +1,6 @@
 const express = require('express');
 const loginHandler = require('../handlers/login_handler');
+const log = require('../helpers/logging');
 const bodyParser = require('body-parser');
 const router = express();
 var config = require('../config');
@@ -17,14 +18,14 @@ var iv = "Ec7bLaTdSuXuf5pW";
 if (config.IS_MAINTENANCE)
 {
     router.get('/', async (req, res) => {
-        console.debug('Connection received')
+        log.GameLog('Connection received')
         res.send('MAINTENANCE');
     });
 }
 else
 {
     router.get('/', async (req, res) => {
-        console.debug('Connection received')
+        log.GameLog('Connection received')
         res.send('SONICRUNNERS OK');
     });
 }
@@ -32,11 +33,11 @@ else
 
 router.get('/generate204/', async (req, res) => {
     res.status(204).send();
-    console.debug('Status 204')
+    log.GameLog('Status 204')
 });
 router.get('/panel/', async (req, res) => {
     res.render('control');
-    console.debug('Status 204')
+    log.GameLog('Status 204')
 });
 
 if (!config.IS_MAINTENANCE)
@@ -44,7 +45,7 @@ if (!config.IS_MAINTENANCE)
     // Login
     router.post('/Login/login/', async (req, res) => {
         var json = helpers.ParseJson(req.body);
-        console.log(JSON.stringify(req.body) + "  " + json.key + " " + json.secure);
+        log.GameLog(JSON.stringify(req.body) + "  " + json.key + " " + json.secure, "warn");
         loginHandler.Login(json.key, iv, json.param, json.secure);
         res.status(200); 
     });

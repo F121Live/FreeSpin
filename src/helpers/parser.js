@@ -1,4 +1,5 @@
 const bodyParser = require('body-parser');
+const log = require('./logging');
 const crypto = require('crypto');
 
 // Decrypt game json.param from AES-128-CBC to readable string
@@ -10,7 +11,7 @@ function Decrypt (key, iv, text, secure) {
         dec += decipher.final('utf8');
         return dec;
     } else {
-        console.log("Does not need decryption");
+        log.GameLog("Does not need decryption");
         return text;
     }
 }
@@ -23,8 +24,8 @@ function Encrypt (key, iv, text, secure) {
         enc += cipher.final('base64');
         return enc;
     } else {
-    console.log("Does not need encryption");
-    return text;
+        log.GameLog("Does not need encryption");
+        return text;
     }
 }
 
