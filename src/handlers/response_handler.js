@@ -1,5 +1,5 @@
 const StatusCode = {
-    Ok: 0,
+    OK: 0,
     ServerSecurityError: -19001,
     VersionDifference: -19002, // server/client version mismatch
     DecryptionFailure: -19003,
@@ -52,4 +52,56 @@ const StatusCode = {
     InternalServerError: -500,
     HspPurchaseError: -600,
     ServerBusy: -700
+}
+
+const Emess = {
+    OK: "\u6210\u529f", // Unicode IDs
+    BadPassword: "\u30d1\u30b9\u30ef\u30fc\u30c9\u304c\u4e0d\u6b63" // Unicode IDs
+}
+
+function BaseInfo(ErrorMessage, CloseTime, Seq, ServerTime, StatusCode) {
+	this.errorMessage = ErrorMessage;
+	this.closeTime = CloseTime;
+    this.seq = Seq;
+    this.server_time = ServerTime;
+    this.statusCode = StatusCode;
+}
+
+function BaseResponse(baseInfo, assets_version, client_data_version, data_version, info_version, version, freeSpinVersion) {
+	baseInfo,
+	assets_version,
+	client_data_version,
+	data_version,
+	info_version,
+	version,
+	freeSpinVersion
+}
+
+function NewBaseInfo(errme, statusCode) {
+    var info = new BaseInfo;
+    info.closeTime = -2;
+    info.server_time = Math.floor(Date.now() / 1000); // Unix timestamp in seconds
+    info.seq = 0;
+    info.errorMessage = errme;
+    info.statusCode = statusCode;
+    return info;
+}
+
+function NewBaseResponse(baseInfo){ // Dummy info, I will use data from the config file later on
+    var base = new BaseResponse
+    base.baseInfo = baseInfo,
+    base.assets_version = "054",
+    base.client_data_version = "2.2.2",
+    base.data_version = "054",
+    base.info_version = "017",
+    base.version = "2.2.2",
+    base.freeSpinVersion = "1.0"
+    return base;
+}
+
+module.exports = {
+    NewBaseInfo,
+    NewBaseResponse,
+    Emess,
+    StatusCode
 }

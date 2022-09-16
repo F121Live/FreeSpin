@@ -46,8 +46,8 @@ if (!config.IS_MAINTENANCE)
     router.post('/Login/login/', async (req, res) => {
         var json = helpers.ParseJson(req.body);
         log.GameLog(JSON.stringify(req.body) + "  " + json.key + " " + json.secure, "warn");
-        loginHandler.Login(json.key, iv, json.param, json.secure);
-        res.status(200); 
+        var loginStatus = await loginHandler.Login(json.key, iv, json.param, json.secure);
+        res.status(200).send(JSON.stringify(loginStatus)); 
     });
     router.post('/Sgn/sendApollo/', async (req, res) => { console.debug(req + "  " + res); });
     router.post('/Login/getVariousParameter/', async (req, res) => { console.debug(req + "  " + res); });
