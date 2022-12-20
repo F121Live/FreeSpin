@@ -1,4 +1,4 @@
-# FreeSpin by F121
+# FreeSpin by F121 [DISCONTINUED]
  FreeSpin is a Sonic Runners server emulator alternative written in NodeJS, my main objective with this project is to learn more about NodeJS and Web Applications by reading and reimplementing functions that can already be found in [Outrun for Revival](https://github.com/RunnersRevival/outrun), a fork of Fluofoxxo's [Outrun](https://github.com/fluofoxxo/outrun).
 
 While FreeSpin will take advantage of MySQL, my goal is to make it as user friendly as I can.
