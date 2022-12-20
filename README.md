@@ -3,7 +3,7 @@
 
 Notice:
 This project has been discontinued, I'm going to be focussing on the Revival client while also providing assistance
-in [Spikewall](https://github.com/Ramen2X/spikewall), a new Sonic Runners server program written in C#.
+to [Spikewall](https://github.com/Ramen2X/spikewall), a new Sonic Runners server program written in C#.
 
 
 
